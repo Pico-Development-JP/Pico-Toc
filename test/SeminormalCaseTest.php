@@ -57,4 +57,35 @@ class SeminormalCaseTest extends TOCTestBase
     }, $this, 'Pico_TOC')->__invoke();
   }
 
+  /**
+  * 以下の状態において、何も出力されず、何も変更されないことを確認する。
+  *
+  * 入力値：見出しがない文字列
+  */
+  public function testNoHeader() {
+    Closure::bind(function() {
+      $test = $this->getTest();
+      $source = $this->getHTML(" * This is List\n * This is List");
+      $html = $source;
+      $toc = $test->createTOC($html);
+      $this->assertEquals($source, $html);
+      $this->assertEmpty($toc);
+    }, $this, 'Pico_TOC')->__invoke();
+  }
+
+  /**
+  * 以下の状態において、何も出力されないことを確認する。
+  *
+  * 入力値：空文字列
+  */
+  public function testEmptyText() {
+    Closure::bind(function() {
+      $test = $this->getTest();
+      $html = "";
+      $toc = $test->createTOC($html);
+      $this->assertEmpty($html);
+      $this->assertEmpty($toc);
+    }, $this, 'Pico_TOC')->__invoke();
+  }
+
 }

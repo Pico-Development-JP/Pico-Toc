@@ -37,7 +37,7 @@ class Pico_TOC extends AbstractPicoPlugin {
     $minlevel = 9;
     $check = function(&$currentLevel, $level, &$toc){
       $prevLevel = $currentLevel;
-      if($prevLevel == $level) $toc .= '</li>';
+      if($level > 0 && $prevLevel == $level) $toc .= '</li>';
       while($currentLevel < $level)
       {
         $toc .= '<ol><li>';
