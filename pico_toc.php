@@ -29,7 +29,7 @@ class Pico_TOC extends AbstractPicoPlugin {
    * TOCを生成する(テストのため、別メソッドに分離)
    * @ref: http://1bit.mobi/20110106215505.html
    */
-  private function createTOC(string &$content)
+  private function createTOC(&$content)
   {
     $toc = "";
     $idcount = 1;
