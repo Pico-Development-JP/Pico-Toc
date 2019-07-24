@@ -4,7 +4,7 @@
  * 記事のヘッダより見出しリストを自動生成するプラグイン
  *
  * @author TakamiChie
- * @link http://onpu-tamago.net/
+ * @link https://onpu-tamago.net/
  * @license http://opensource.org/licenses/MIT
  * @version 1.0
  */
