@@ -18,8 +18,8 @@ class Pico_TOC extends AbstractPicoPlugin {
 	{
 		$this->headinglevel = isset($config["headerlv"]["level"]) ?
 		    $config["headerlv"]["level"] : 3;
-	}
-
+  }
+  
   public function onPageRendering(&$templateName, array &$twigVariables)
   {
     $content = $twigVariables["content"];
