@@ -6,9 +6,11 @@
  * @author TakamiChie
  * @link https://onpu-tamago.net/
  * @license http://opensource.org/licenses/MIT
- * @version 1.0
+ * @version 1.1
  */
 class Pico_TOC extends AbstractPicoPlugin {
+
+  const API_VERSION = 2;
 
   protected $enabled = false;
   
@@ -18,7 +20,7 @@ class Pico_TOC extends AbstractPicoPlugin {
 		    $config["headerlv"]["level"] : 3;
 	}
 
-  public function onPageRendering(Twig_Environment &$twig, array &$twigVariables, &$templateName)
+  public function onPageRendering(&$templateName, array &$twigVariables)
   {
     $content = $twigVariables["content"];
     $twigVariables["TOC"] = $this->createTOC($content);
